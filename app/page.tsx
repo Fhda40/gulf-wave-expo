@@ -17,7 +17,7 @@ const projectRail = [
   "/projects/life-care-1.jpeg",
   "/projects/founding-day-1.jpeg",
 ];
-const clients = [
+const clientNames = [
   "وزارة التجارة والصناعة",
   "هيئة النقل",
   "هيئة الزكاة والضريبة والجمارك",
@@ -29,6 +29,17 @@ const clients = [
   "Life Care",
   "إتقان",
   "سلام",
+];
+const partners = [
+  { name: "صندوق التنمية الزراعية", logo: "/partners/adf.png" },
+  { name: "مدن", logo: "/partners/modon.svg" },
+  { name: "صكوك المالية", logo: "/partners/sukuk.svg" },
+  { name: "سلام موبايل", logo: "/partners/salam-mobile.svg" },
+  { name: "رسيل للهدايا", logo: "/partners/raseel.png" },
+  { name: "رِفت", logo: "/partners/rift.png", dark: true },
+  { name: "ريد بول", logo: "/partners/red-bull.svg" },
+  { name: "وزارة الثقافة", logo: "/partners/ministry-culture.svg" },
+  { name: "مواقف الرياض", logo: "/partners/riyadh-parking.svg", dark: true },
 ];
 
 export default function Home() {
@@ -55,7 +66,7 @@ export default function Home() {
         {[...projectRail, ...projectRail].map((src, index) => <figure key={`${src}-${index}`} aria-hidden={index >= projectRail.length}><img src={src} alt={index < projectRail.length ? "مشروع منفذ من أعمال موجة الخليج" : ""} loading="lazy" /></figure>)}
       </div></div>
     </section>
-    <section className="clients" aria-labelledby="clients-title"><div className="container clients-layout"><div><p className="eyebrow cyan">الثقة تُبنى بالتنفيذ</p><h2 id="clients-title">جهات تشرفنا<br />بتنفيذ أعمالها</h2></div><ul>{clients.map((client) => <li key={client}>{client}</li>)}</ul></div></section>
+    <section className="clients" aria-labelledby="clients-title"><div className="container clients-layout"><div><p className="eyebrow cyan">الثقة تُبنى بالتنفيذ</p><h2 id="clients-title">شركاء<br />النجاح</h2><p className="clients-intro">جهات وعلامات تشرفنا بتنفيذ أعمال وتجارب لها.</p></div><div className="partners-panel"><ul className="partner-logos">{partners.map((partner) => <li key={partner.name} className={partner.dark ? "partner-logo dark-mark" : "partner-logo"}><img src={partner.logo} alt={`شعار ${partner.name}`} loading="lazy" /><span>{partner.name}</span></li>)}</ul><ul className="partner-names" aria-label="جهات أخرى عملنا معها">{clientNames.map((client) => <li key={client}>{client}</li>)}</ul></div></div></section>
     <section className="process"><div className="container"><div className="section-head"><p className="eyebrow cyan">طريقة العمل</p><h2>كيف ننفذ مشروعك</h2></div><ol><li><h3>نفهم الهدف</h3><p>نحدد طبيعة المشاركة، الجمهور، المساحة والموعد.</p></li><li><h3>نصمم التجربة</h3><p>نقدّم تصورًا يعكس الهوية ويخدم حركة الزوار.</p></li><li><h3>نصنع ونركّب</h3><p>نتولى التفاصيل الميدانية حتى التسليم الجاهز.</p></li><li><h3>نساند التشغيل</h3><p>نبقى قريبين لضمان انطلاقة التجربة كما خُطط لها.</p></li></ol></div></section>
     <section className="faq"><div className="container"><div className="section-head"><p className="eyebrow cyan">أسئلة شائعة</p><h2>قبل أن نبدأ</h2></div><div className="faq-list"><details><summary>هل تقدمون التصميم والتنفيذ معًا؟</summary><p>نعم، نتولى دورة المشروع من دراسة المساحة والتصميم وحتى التصنيع والتركيب والتسليم.</p></details><details><summary>هل تعملون داخل الرياض فقط؟</summary><p>مقر نشاطنا في الرياض، ويمكن دراسة المشاريع خارجها بحسب نطاق العمل وموعد التنفيذ.</p></details><details><summary>متى أطلب عرض السعر؟</summary><p>كلما كان التواصل مبكرًا كان التخطيط أفضل. أرسل المساحة والموعد ونوع الفعالية وسنتواصل معك لتحديد الاحتياج.</p></details></div></div></section>
     <section className="cta" id="contact"><div className="container"><p className="eyebrow">أرسل المساحة والموعد ومتطلبات المشروع، ودعنا نرتب التفاصيل</p><h2>لديك معرض أو فعالية؟</h2><a className="button primary" href="/contact">اطلب عرض سعر <MoveLeft size={18} /></a></div></section>
