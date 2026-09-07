@@ -29,7 +29,7 @@ const partners = [
   { name: "وزارة الثقافة", logo: "/partners/ministry-culture.svg" },
   { name: "مواقف الرياض", logo: "/partners/riyadh-parking.svg", invert: true },
   { name: "تحكم", logo: "https://strapi.wasmenia.com/uploads/Tahakom_a9bf41a6eb.svg" },
-  { name: "شركة نقل المياه", logo: "https://www.wttco.com/media/a54jbgjs/down.png" },
+  { name: "شركة نقل المياه", logo: "https://strapi.wasmenia.com/uploads/Water_Transport_Company_02ebfbaf43.svg" },
   { name: "Life Care", logo: "https://www.lifecare.com.sa/wp-content/uploads/2026/07/Lifecare-logo.png" },
   { name: "إتقان", logo: "https://etqan.sa/wp-content/uploads/2025/11/512x512-etqan-logo.png" },
 ];
