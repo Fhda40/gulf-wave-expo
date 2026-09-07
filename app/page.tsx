@@ -10,36 +10,29 @@ const services = [
 ];
 const gallery = [1, 3, 6, 9, 11, 14];
 const projectRail = [
-  "/projects/tahakom-2.jpeg",
-  "/projects/ziena-2.jpeg",
-  "/projects/water-1.jpeg",
-  "/projects/ramadan-1.jpeg",
-  "/projects/life-care-1.jpeg",
-  "/projects/founding-day-1.jpeg",
-];
-const clientNames = [
-  "وزارة التجارة والصناعة",
-  "هيئة النقل",
-  "هيئة الزكاة والضريبة والجمارك",
-  "وزارة السياحة",
-  "وزارة الرياضة",
-  "تحكم",
-  "شركة نقل المياه",
-  "زينة",
-  "Life Care",
-  "إتقان",
-  "سلام",
+  "/projects/tahakom-2.jpeg", "/projects/ziena-2.jpeg", "/projects/water-1.jpeg",
+  "/projects/ramadan-1.jpeg", "/projects/life-care-1.jpeg", "/projects/founding-day-1.jpeg",
 ];
 const partners = [
+  { name: "وزارة التجارة", logo: "https://www.google.com/s2/favicons?domain=mc.gov.sa&sz=256" },
+  { name: "الهيئة العامة للنقل", logo: "https://www.google.com/s2/favicons?domain=tga.gov.sa&sz=256" },
+  { name: "هيئة الزكاة والضريبة والجمارك", logo: "https://www.google.com/s2/favicons?domain=zatca.gov.sa&sz=256" },
+  { name: "وزارة السياحة", logo: "https://www.google.com/s2/favicons?domain=mt.gov.sa&sz=256" },
+  { name: "وزارة الرياضة", logo: "https://www.google.com/s2/favicons?domain=mos.gov.sa&sz=256" },
   { name: "صندوق التنمية الزراعية", logo: "/partners/adf.png" },
   { name: "مدن", logo: "/partners/modon.svg" },
   { name: "صكوك المالية", logo: "/partners/sukuk.svg" },
   { name: "سلام موبايل", logo: "/partners/salam-mobile.svg" },
   { name: "رسيل للهدايا", logo: "/partners/raseel.png" },
-  { name: "رِفت", logo: "/partners/rift.png", dark: true },
-  { name: "ريد بول", logo: "/partners/red-bull.svg" },
+  { name: "رِفت", logo: "/partners/rift.png", invert: true },
+  { name: "ريد بُل", logo: "/partners/red-bull.svg" },
   { name: "وزارة الثقافة", logo: "/partners/ministry-culture.svg" },
-  { name: "مواقف الرياض", logo: "/partners/riyadh-parking.svg", dark: true },
+  { name: "مواقف الرياض", logo: "/partners/riyadh-parking.svg", invert: true },
+  { name: "تحكم", logo: "https://www.google.com/s2/favicons?domain=tahakom.com&sz=256" },
+  { name: "شركة نقل المياه", logo: "https://www.google.com/s2/favicons?domain=wttco.com.sa&sz=256" },
+  { name: "زينة", logo: "https://www.google.com/s2/favicons?domain=ziena.sa&sz=256" },
+  { name: "Life Care", logo: "https://www.google.com/s2/favicons?domain=lifecare.com.sa&sz=256" },
+  { name: "إتقان", logo: "https://www.google.com/s2/favicons?domain=etqan.sa&sz=256" },
 ];
 
 export default function Home() {
@@ -60,13 +53,8 @@ export default function Home() {
     </div></section>
     <section className="services" id="services"><div className="container"><div className="section-head"><p className="eyebrow cyan">ما الذي ننفذه</p><h2>من الفكرة الأولى<br />حتى لحظة الافتتاح</h2><p>فريق واحد يدير التصميم والتصنيع والتركيب والتشغيل، لتصل إلى النتيجة دون تشتيت بين عدة موردين.</p></div><div className="service-list">{services.map((s) => <article key={s.n}><h3>{s.title}</h3><p>{s.text}</p></article>)}</div></div></section>
     <section className="portfolio-strip"><div className="container strip-head"><p className="eyebrow cyan">أعمالنا</p><h2>أعمال تتحدث عنا</h2><Link className="text-link" href="/projects">مشاهدة المعرض الكامل <ArrowLeft size={17} /></Link></div><div className="gallery">{gallery.map((n, i) => <figure key={n}><img src={`/projects/project-${String(n).padStart(2,"0")}.webp`} alt={`أحد مشاريع تجهيز المعارض والفعاليات لدى موجة الخليج — صورة ${i + 1}`} loading="lazy" /><figcaption>من أعمال موجة الخليج</figcaption></figure>)}</div></section>
-    <section className="project-reel" aria-labelledby="project-reel-title">
-      <div className="container reel-heading"><h2 id="project-reel-title">مشاهد من أرض الواقع</h2><p>تصميم، تصنيع وتجهيز في مواقع متعددة</p></div>
-      <div className="reel-window"><div className="reel-track">
-        {[...projectRail, ...projectRail].map((src, index) => <figure key={`${src}-${index}`} aria-hidden={index >= projectRail.length}><img src={src} alt={index < projectRail.length ? "مشروع منفذ من أعمال موجة الخليج" : ""} loading="lazy" /></figure>)}
-      </div></div>
-    </section>
-    <section className="clients" aria-labelledby="clients-title"><div className="container clients-layout"><div><p className="eyebrow cyan">الثقة تُبنى بالتنفيذ</p><h2 id="clients-title">شركاء<br />النجاح</h2><p className="clients-intro">جهات وعلامات تشرفنا بتنفيذ أعمال وتجارب لها.</p></div><div className="partners-panel"><ul className="partner-logos">{partners.map((partner) => <li key={partner.name} className={partner.dark ? "partner-logo dark-mark" : "partner-logo"}><img src={partner.logo} alt={`شعار ${partner.name}`} loading="lazy" /><span>{partner.name}</span></li>)}</ul><ul className="partner-names" aria-label="جهات أخرى عملنا معها">{clientNames.map((client) => <li key={client}>{client}</li>)}</ul></div></div></section>
+    <section className="project-reel" aria-labelledby="project-reel-title"><div className="container reel-heading"><h2 id="project-reel-title">مشاهد من أرض الواقع</h2><p>تصميم، تصنيع وتجهيز في مواقع متعددة</p></div><div className="reel-window"><div className="reel-track">{[...projectRail, ...projectRail].map((src, index) => <figure key={`${src}-${index}`} aria-hidden={index >= projectRail.length}><img src={src} alt={index < projectRail.length ? "مشروع منفذ من أعمال موجة الخليج" : ""} loading="lazy" /></figure>)}</div></div></section>
+    <section className="clients" aria-labelledby="clients-title"><div className="container clients-layout"><div><p className="eyebrow cyan">الثقة تُبنى بالتنفيذ</p><h2 id="clients-title">شركاء النجاح</h2><p className="clients-intro">جهات وعلامات تشرفنا بتنفيذ أعمال وتجارب لها.</p></div><ul className="partner-logos">{partners.map((partner) => <li key={partner.name} title={partner.name}><img className={partner.invert ? "partner-invert" : undefined} src={partner.logo} alt={`شعار ${partner.name}`} loading="lazy" /></li>)}</ul></div></section>
     <section className="process"><div className="container"><div className="section-head"><p className="eyebrow cyan">طريقة العمل</p><h2>كيف ننفذ مشروعك</h2></div><ol><li><h3>نفهم الهدف</h3><p>نحدد طبيعة المشاركة، الجمهور، المساحة والموعد.</p></li><li><h3>نصمم التجربة</h3><p>نقدّم تصورًا يعكس الهوية ويخدم حركة الزوار.</p></li><li><h3>نصنع ونركّب</h3><p>نتولى التفاصيل الميدانية حتى التسليم الجاهز.</p></li><li><h3>نساند التشغيل</h3><p>نبقى قريبين لضمان انطلاقة التجربة كما خُطط لها.</p></li></ol></div></section>
     <section className="faq"><div className="container"><div className="section-head"><p className="eyebrow cyan">أسئلة شائعة</p><h2>قبل أن نبدأ</h2></div><div className="faq-list"><details><summary>هل تقدمون التصميم والتنفيذ معًا؟</summary><p>نعم، نتولى دورة المشروع من دراسة المساحة والتصميم وحتى التصنيع والتركيب والتسليم.</p></details><details><summary>هل تعملون داخل الرياض فقط؟</summary><p>مقر نشاطنا في الرياض، ويمكن دراسة المشاريع خارجها بحسب نطاق العمل وموعد التنفيذ.</p></details><details><summary>متى أطلب عرض السعر؟</summary><p>كلما كان التواصل مبكرًا كان التخطيط أفضل. أرسل المساحة والموعد ونوع الفعالية وسنتواصل معك لتحديد الاحتياج.</p></details></div></div></section>
     <section className="cta" id="contact"><div className="container"><p className="eyebrow">أرسل المساحة والموعد ومتطلبات المشروع، ودعنا نرتب التفاصيل</p><h2>لديك معرض أو فعالية؟</h2><a className="button primary" href="/contact">اطلب عرض سعر <MoveLeft size={18} /></a></div></section>
