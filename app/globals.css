@@ -246,7 +246,7 @@ h1,h2,h3,.footer-pitch h2{font-family:var(--font-display);font-weight:600}
 .partner-logo{width:220px;height:112px;flex:none;display:flex;align-items:center;justify-content:center;margin:0;padding:10px;background:transparent;border:0;opacity:.86;transition:opacity .25s,transform .25s}
 .partner-logo:hover{opacity:1;transform:translateY(-3px)}
 .partner-logo img{display:block;width:auto;height:auto;max-width:190px;max-height:80px;object-fit:contain;background:transparent!important}.partner-logo img.partner-invert{filter:grayscale(1) brightness(0) invert(1)}
-.partner-logo img.partner-boost{transform:scale(1.35)}
+.partner-logo img.partner-boost{transform:scale(1.65)}
 @keyframes partner-marquee{to{transform:translateX(calc(-50% - 35px))}}
 
 @media(max-width:900px){
