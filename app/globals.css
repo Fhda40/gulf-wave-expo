@@ -233,6 +233,7 @@ h1,h2,h3,.footer-pitch h2{font-family:var(--font-display);font-weight:600}
 .footer-main a{transition:color .2s}.footer-main a:hover{color:var(--cyan)}
 .footer-contact a{font:500 15px Arial,sans-serif;color:#fff}
 .copyright{margin-top:0;padding-top:21px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#66726e;font-size:10px}
+.copyright b{color:#a8b5b0;font:600 10px/1.4 Arial,sans-serif;letter-spacing:.08em}
 
 .project-reel{padding:76px 0;background:#0b1512;overflow:hidden;border-top:1px solid var(--line)}
 .reel-heading{display:flex;align-items:end;justify-content:space-between;gap:32px;margin-bottom:28px}.reel-heading h2{font-size:clamp(28px,3vw,42px);line-height:1.6;margin:0}.reel-heading p{color:var(--muted);font-size:13px;margin:0 0 10px}
