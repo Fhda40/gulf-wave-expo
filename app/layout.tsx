@@ -39,7 +39,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className="footer-services"><strong>ننفذ</strong><span>أجنحة المعارض</span><span>الفعاليات المؤسسية</span><span>التجهيزات المؤقتة</span></div>
         <div className="footer-contact"><strong>تواصل</strong><a href="tel:+966563790900" dir="ltr">+966 56 379 0900</a><span>الرياض، السعودية</span></div>
       </div>
-      <div className="container copyright"><span>© {new Date().getFullYear()} موجة الخليج</span><span>تصميم وتنفيذ بمعايير ميدانية</span></div>
+      <div className="container copyright"><span>© {new Date().getFullYear()} موجة الخليج</span><span>تطوير <b dir="ltr">Najd Valley</b></span></div>
     </footer>
   </body></html>;
 }
