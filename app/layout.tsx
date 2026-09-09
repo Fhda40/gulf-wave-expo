@@ -7,7 +7,7 @@ import { MobileNavigation } from "../components/mobile-navigation";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gulfwaveexpo.com"),
+  metadataBase: new URL("https://gulfwavexpo.com"),
   title: { default: "موجة الخليج | تصميم وتنفيذ المعارض والفعاليات بالرياض", template: "%s | موجة الخليج" },
   description: "موجة الخليج لتصميم وتصنيع وتنفيذ أجنحة المعارض وتجهيز الفعاليات والواجهات التفاعلية في الرياض.",
   keywords: ["تصميم أجنحة معارض بالرياض", "تنفيذ بوثات", "تجهيز فعاليات الرياض", "موجة الخليج", "Gulf Wave Expo"],
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 };
 
-const schema = { "@context": "https://schema.org", "@type": "ProfessionalService", name: "موجة الخليج", alternateName: "Gulf Wave", url: "https://gulfwaveexpo.com", telephone: "+966563790900", areaServed: { "@type": "City", name: "Riyadh" }, address: { "@type": "PostalAddress", addressLocality: "الرياض", addressCountry: "SA" }, description: "تصميم وتنفيذ أجنحة المعارض والفعاليات في الرياض", serviceType: ["تصميم أجنحة المعارض", "تنفيذ البوثات", "تنظيم الفعاليات", "التجهيزات المؤقتة"] };
+const schema = { "@context": "https://schema.org", "@type": "ProfessionalService", name: "موجة الخليج", alternateName: "Gulf Wave", url: "https://gulfwavexpo.com", telephone: "+966563790900", areaServed: { "@type": "City", name: "Riyadh" }, address: { "@type": "PostalAddress", addressLocality: "الرياض", addressCountry: "SA" }, description: "تصميم وتنفيذ أجنحة المعارض والفعاليات في الرياض", serviceType: ["تصميم أجنحة المعارض", "تنفيذ البوثات", "تنظيم الفعاليات", "التجهيزات المؤقتة"] };
 const navLinks = [["الرئيسية", "/"], ["خدماتنا", "/#services"], ["أعمالنا", "/projects"], ["من نحن", "/about"], ["تواصل معنا", "/contact"]] as const;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
