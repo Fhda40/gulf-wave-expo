@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowUpLeft, Menu, X } from "lucide-react";
 
 import { BrandLogo } from "./brand-logo";
+import { SocialLinks } from "./social-links";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 
 const links = [
@@ -42,6 +43,7 @@ export function MobileNavigation() {
         <div className="mobile-sheet-foot">
           <p>نصمم وننفذ أجنحة المعارض والفعاليات من الفكرة حتى الافتتاح.</p>
           <a href="tel:+966563790900" dir="ltr">+966 56 379 0900</a>
+          <SocialLinks compact />
         </div>
       </SheetContent>
     </Sheet>
