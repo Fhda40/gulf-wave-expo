@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { BrandLogo } from "../components/brand-logo";
 import { MobileNavigation } from "../components/mobile-navigation";
+import { SocialLinks } from "../components/social-links";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
 };
 
-const schema = { "@context": "https://schema.org", "@type": "ProfessionalService", name: "موجة الخليج", alternateName: "Gulf Wave", url: "https://gulfwavexpo.com", telephone: "+966563790900", areaServed: { "@type": "City", name: "Riyadh" }, address: { "@type": "PostalAddress", addressLocality: "الرياض", addressCountry: "SA" }, description: "تصميم وتنفيذ أجنحة المعارض والفعاليات في الرياض", serviceType: ["تصميم أجنحة المعارض", "تنفيذ البوثات", "تنظيم الفعاليات", "التجهيزات المؤقتة"] };
+const schema = { "@context": "https://schema.org", "@type": "ProfessionalService", name: "موجة الخليج", alternateName: "Gulf Wave", url: "https://gulfwavexpo.com", telephone: "+966563790900", areaServed: { "@type": "City", name: "Riyadh" }, address: { "@type": "PostalAddress", addressLocality: "الرياض", addressCountry: "SA" }, description: "تصميم وتنفيذ أجنحة المعارض والفعاليات في الرياض", serviceType: ["تصميم أجنحة المعارض", "تنفيذ البوثات", "تنظيم الفعاليات", "التجهيزات المؤقتة"], sameAs: ["https://www.instagram.com/gulfwavexpo/", "https://x.com/gulfwavexpo"] };
 const navLinks = [["الرئيسية", "/"], ["خدماتنا", "/#services"], ["أعمالنا", "/projects"], ["من نحن", "/about"], ["تواصل معنا", "/contact"]] as const;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -37,7 +38,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className="footer-brand"><BrandLogo /><p>تصميم، تصنيع وتنفيذ أجنحة المعارض والفعاليات في الرياض.</p></div>
         <nav aria-label="روابط الفوتر"><strong>تصفّح</strong>{navLinks.slice(1).map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</nav>
         <div className="footer-services"><strong>ننفذ</strong><span>أجنحة المعارض</span><span>الفعاليات المؤسسية</span><span>التجهيزات المؤقتة</span></div>
-        <div className="footer-contact"><strong>تواصل</strong><a href="tel:+966563790900" dir="ltr">+966 56 379 0900</a><span>الرياض، السعودية</span></div>
+        <div className="footer-contact"><strong>تواصل</strong><a href="tel:+966563790900" dir="ltr">+966 56 379 0900</a><span>الرياض، السعودية</span><SocialLinks /></div>
       </div>
       <div className="container copyright"><span>© {new Date().getFullYear()} موجة الخليج</span><span>تطوير <b dir="ltr">Najd Valley</b></span></div>
     </footer>
