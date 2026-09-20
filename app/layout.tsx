@@ -31,6 +31,28 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       gtag('js', new Date());
       gtag('config', 'G-C8NCYZ834G');
     `}</Script>
+    <Script id="conversion-events" strategy="afterInteractive">{`
+      document.addEventListener('click', function (event) {
+        if (!(event.target instanceof Element)) return;
+        const link = event.target.closest('a');
+        if (!link) return;
+
+        const href = link.getAttribute('href') || '';
+        let eventName = '';
+
+        if (href.startsWith('tel:')) {
+          eventName = 'phone_click';
+        } else if (href.includes('wa.me/')) {
+          eventName = link.closest('.inquiry-review') ? 'generate_lead' : 'whatsapp_click';
+        }
+
+        if (!eventName || typeof window.gtag !== 'function') return;
+        window.gtag('event', eventName, {
+          link_url: href,
+          page_path: window.location.pathname
+        });
+      });
+    `}</Script>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <header className="site-header"><div className="container nav">
       <BrandLogo />
