@@ -1,6 +1,7 @@
 import { ArrowUpLeft, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 
 import { BrandLogo } from "../components/brand-logo";
 import { MobileNavigation } from "../components/mobile-navigation";
@@ -23,6 +24,13 @@ const navLinks = [["الرئيسية", "/"], ["خدماتنا", "/#services"], [
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="ar" dir="rtl"><body>
+    <Script src="https://www.googletagmanager.com/gtag/js?id=G-C8NCYZ834G" strategy="afterInteractive" />
+    <Script id="google-analytics" strategy="afterInteractive">{`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-C8NCYZ834G');
+    `}</Script>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <header className="site-header"><div className="container nav">
       <BrandLogo />
