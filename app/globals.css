@@ -61,8 +61,11 @@ a:focus-visible,summary:focus-visible{outline:3px solid var(--cyan);outline-offs
 .section-head{gap:12px 56px;margin-bottom:32px}
 .section-head>p:last-child{font-size:16px}
 .service-list{display:grid;grid-template-columns:1fr 1fr;gap:16px;border:0}
-.service-list article{display:block;padding:28px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
-.service-list article:hover{padding:28px;background:#202a26}
+.service-card{display:grid;grid-template-columns:1fr auto;align-items:center;padding:28px;border:1px solid var(--line);border-radius:12px;background:var(--panel);transition:background .2s,border-color .2s}
+.service-card:hover{background:#202a26;border-color:rgba(103,215,207,.45)}
+.service-card h3{grid-column:1;margin:0 0 12px}
+.service-card p{grid-column:1;margin:0}
+.service-card svg{grid-column:2;grid-row:1/3;color:var(--cyan)}
 .service-list h3{font-size:21px;margin:0 0 12px}
 .service-list p{font-size:15px}
 .strip-head{margin-bottom:30px}
@@ -127,7 +130,7 @@ footer{padding:48px 0 24px}
 .section-head{margin-bottom:24px;gap:8px}
 .section-head>p:last-child{font-size:15px}
 .service-list,.gallery,.process ol{grid-template-columns:1fr}
-.service-list article,.service-list article:hover{padding:22px}
+  .service-list article,.service-list article:hover,.service-card{padding:22px}
 .service-list h3{font-size:19px}
 .strip-head{gap:12px}
 .gallery img{aspect-ratio:4/3}
@@ -232,6 +235,11 @@ h1,h2,h3,.footer-pitch h2{font-family:var(--font-display);font-weight:600}
 .footer-main strong{margin-bottom:8px;color:#fff;font-size:12px}
 .footer-main a{transition:color .2s}.footer-main a:hover{color:var(--cyan)}
 .footer-contact a{font:500 15px Arial,sans-serif;color:#fff}
+.related-services{max-width:850px;margin-top:64px;padding-top:34px;border-top:1px solid var(--line)}
+.related-services h2{font-size:26px;margin:0 0 20px}
+.related-services div{display:flex;flex-wrap:wrap;gap:12px}
+.related-services a{padding:12px 16px;border:1px solid var(--line);border-radius:8px;color:#dfe8e5;transition:border-color .2s,color .2s}
+.related-services a:hover{border-color:var(--cyan);color:var(--cyan)}
 .copyright{margin-top:0;padding-top:21px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#66726e;font-size:10px}
 .copyright b{color:#a8b5b0;font:600 10px/1.4 Arial,sans-serif;letter-spacing:.08em}
 

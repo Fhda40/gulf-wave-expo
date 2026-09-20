@@ -6,6 +6,7 @@ import Script from "next/script";
 import { BrandLogo } from "../components/brand-logo";
 import { MobileNavigation } from "../components/mobile-navigation";
 import { SocialLinks } from "../components/social-links";
+import { getServiceHref, servicePages } from "../lib/services";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -67,7 +68,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <div className="container footer-main">
         <div className="footer-brand"><BrandLogo /><p>تصميم، تصنيع وتنفيذ أجنحة المعارض والفعاليات في الرياض.</p></div>
         <nav aria-label="روابط الفوتر"><strong>تصفّح</strong>{navLinks.slice(1).map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}</nav>
-        <div className="footer-services"><strong>ننفذ</strong><span>أجنحة المعارض</span><span>الفعاليات المؤسسية</span><span>التجهيزات المؤقتة</span></div>
+        <nav className="footer-services" aria-label="روابط الخدمات"><strong>ننفذ</strong>{servicePages.map((service) => <Link href={getServiceHref(service.slug)} key={service.slug}>{service.shortTitle}</Link>)}</nav>
         <div className="footer-contact"><strong>تواصل</strong><a href="tel:+966563790900" dir="ltr">+966 56 379 0900</a><span>الرياض، السعودية</span><SocialLinks /></div>
       </div>
       <div className="container copyright"><span>© {new Date().getFullYear()} موجة الخليج</span><span>تطوير <b dir="ltr">Najd Valley</b></span></div>
